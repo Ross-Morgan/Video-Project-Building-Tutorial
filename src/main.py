@@ -5,7 +5,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, size: QtCore.QSize, title: str, icon: QtGui.QIcon,
-                 parent: QtWidgets.QWidget):
+                 parent: QtWidgets.QWidget | None = None):
         super().__init__(parent=parent)
 
         self.resize(size)
@@ -29,7 +29,7 @@ def main():
     title = "Test Window"
     icon = QtGui.QIcon("")
 
-    window = MainWindow(size, title, icon, parent=None)
+    window = MainWindow(size, title, icon)
     window.show()
 
     app.exec()
